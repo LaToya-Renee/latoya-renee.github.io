@@ -1,0 +1,23 @@
+#about-main {
+    display: inline-grid;
+    margin: 90px 20px;
+    grid-template: repeat(3, 1fr) / 1fr 2fr 1fr;
+    column-gap: 5px;
+    outline: 2px solid red;
+}
+
+#main-info {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    outline: 1px solid limegreen;
+}
+
+#work-history {
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+}
+
+#skillset {
+    grid-column: 3 / 4;
+    grid-row: 1 / 4;
+}
