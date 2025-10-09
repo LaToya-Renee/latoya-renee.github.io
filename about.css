@@ -34,6 +34,7 @@ main {
 }
 
 /* Scroll Bars for Scroll Boxes */
+
 .scroll-box {
     height: 300px;
     padding: 0px 10px;
@@ -58,6 +59,7 @@ main {
 }
 
     /* Shifts Scroll Bar for Skillset to the Left */
+
     #skills-list {
         direction: rtl;
         overflow-x: hidden;
@@ -97,7 +99,13 @@ main {
     font-size: 16px;
     text-align: center;
     text-transform: uppercase;
-    margin-bottom: 5px;
+}
+
+.job-title-div {
+    height: 2px;
+    border-bottom: 2px solid #4F5D75;
+    margin: 3px auto 4px auto;;
+    width: 50%;
 }
 
 #work-history h6 {
@@ -113,6 +121,14 @@ main {
 #work-history .date {
     font-style: italic;
     font-size: 12px;}
+
+.divider {
+    display: block;
+    margin: 5px auto;
+    text-align: center;
+}
+
+
 
     /* Grid Rules for Jobs */
 
@@ -144,7 +160,7 @@ main {
 
     #skills-list li:hover {
         color: #EF8354;
-        cursor: pointer;
+        cursor: default;
     }
 
 /* Image Styling */
@@ -163,4 +179,35 @@ img {
     width: 600px;
     height: 600px;
     margin-top: 130px;
+}
+
+/* Button Styling */
+
+#cv-button a {
+    text-decoration: none;
+}
+
+#cv-button button {
+    display: block;
+    margin: 20px auto;
+    padding: 1.5% 4.5%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(45, 49, 66, 0.4), 0 3px 10px rgba(45, 49, 66, 0.38);
+    color: #4F5D75;
+}
+
+#cv-button button:hover {
+    cursor: pointer;
+    
+}
+
+/* Bio Text Styling */
+
+#bio {
+    text-align: center;
+    margin-top: 20px;
+    line-height: 1.2;
 }
