@@ -1,10 +1,15 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #about-main {
-    display: inline-grid;
-    z-index: 1;
-    margin: 90px 20px;
-    grid-template: repeat(3, 1fr) / 1fr 2fr 1fr;
+    display: grid;
+    width: 90%;
+    margin: 90px auto;
+    grid-template: repeat(3, 1fr) / 2fr 1.5fr 2fr;
     column-gap: 5px;
-    justify-items: center;
     justify-content: center;
 }
 
@@ -13,7 +18,9 @@
 
 #main-info {
     grid-area: 1 / 2 / 4 / 3;
-    margin-top: 60px;
+    margin-top: 30px;
+    justify-items: center;
+
 }
 
 #work-history {
@@ -139,3 +146,21 @@
         color: #EF8354;
         cursor: pointer;
     }
+
+/* Image Styling */
+
+#profile-frame {
+    max-width: 220px;
+    max-height: 220px;
+    background-color: #4F5D75;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+img {
+    width: 600px;
+    height: 600px;
+    margin-top: 130px;
+}
