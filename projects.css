@@ -1,7 +1,7 @@
 #main-container {
     display: grid;
     position: relative;
-    grid-template: repeat (4, 1fr) / repeat (6, 1fr);
+    grid-template: repeat(4, minmax(0, 1fr)) / repeat (6, 1fr);
     gap: 5px;
     padding: 5px;
     margin: 90px auto 20px auto;
@@ -15,19 +15,109 @@
 .project-box {
     border-radius: 8px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-around;
     position: relative;
-    overflow: hidden;
-    transition: all 1s ease-in-out 0.3s;
+    z-index: 1;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    text-align: center;
 }
 
 /* --- Project Boxes --- */
 
+/* Inside All Boxes */
+
+.project-hover-box {
+    background-color: #2D314280;
+    width: 100%;
+    z-index: 2;
+    height: auto;
+    justify-content: center;
+    padding: 10px 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-box h2 {
+    width: 100%;
+    position: relative;
+    padding: 10px 0;
+    margin: 20px auto;
+    color: #FFFFFF;
+    z-index: 2;
+    transition: opacity 0.4s ease-in-out, height 0.4s ease-in-out;
+    font-size: 0.9rem;
+}
+
+.hidden-project-info {
+    visibility: hidden;
+    opacity: 0;
+    transform: scaleY(0);
+    transition: transform 0.4s ease-in-out, opacity 0.4s;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    overflow: hidden;
+    padding: 20px 5px;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    font-size: 8px;
+}
+
+.project-about {
+    padding: 5px 10px;
+    color: #FFFFFF;
+    font-size: 0.5rem;
+}
+
+.button-box {
+    width: 100%;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    z-index: 1;
+    font-size: 0.85rem;
+}
+
+.see-project-button, .see-code-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 15px;
+    background-color: #4F5D7590;
+    color: #FFFFFFCC;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+        /* Hover Effects Inside All Boxes */
+
+        .project-box:hover .hidden-project-info {
+            visibility: visible;
+            position: relative;
+            opacity: 1;
+            transform: scaleY(1);
+            
+        }
+
+        .project-box:hover h2 {
+            display: none;
+            opacity: 0;
+            height: 0;
+        }
+
+
+
 /*Box 1*/
     #box-one {
         grid-area: 1 / 1 / span 2 / span 2;
-        background-color: red;
+        background-color: white;
         
     }
 
@@ -102,14 +192,14 @@
 
 
 .project-box:hover {
-    transform: scale(150%);
-    z-index: 2;
+    transform: scale(1.5) translate(10%);
+    z-index: 5;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.19);
 }
 
 #main-container:has(.project-box:hover) .project-box:not(:hover) {
     opacity: 0.3;
-    transform: scale(95%);
+    transform: scale(0.95);
 }
 
 
