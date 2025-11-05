@@ -12,12 +12,11 @@ main {
     justify-content: center;
 }
 
-
 /* Main Grid */
 
 #main-info {
     grid-area: 1 / 2 / 4 / 3;
-    margin-top: 30px;
+    margin-top: 10px;
     justify-items: center;
 
 }
@@ -30,6 +29,91 @@ main {
 #skillset {
     grid-area: 1 / 3 / span 3 / 4;
     margin-top: 100px;
+}
+
+
+/* About Me Section */
+
+/* Image Styling */
+
+#profile-frame {
+    max-width: 220px;
+    max-height: 220px;
+    background-color: #4F5D75;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+img {
+    width: 600px;
+    height: 600px;
+    margin-top: 140px;
+}
+
+
+/* Intro Styling */
+
+.introduction{
+    text-align: center;
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.introduction h1{
+    width: 100%;
+    font-size: 5.5rem;
+}
+
+.introduction h2{
+    width: 100%;
+    font-size: 1.5rem;
+    color: #EF8354;
+}
+
+.introduction p {
+    width: 100%;
+    font-size: 1rem;
+    padding: 2px 0;
+}
+
+/* Button Styling */
+
+.buttons {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 5px;
+    gap: 5px;
+}
+
+.buttons a {
+    text-decoration: none;
+}
+
+.buttons button {
+    padding: 5px;
+    border-radius: 10px 0;;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(45, 49, 66, 0.4), 0 3px 10px rgba(45, 49, 66, 0.38);
+    color: #4F5D75;
+}
+
+.buttons button:hover {
+    cursor: pointer;
+    background-color: #EF8354;
+}
+
+/* Bio Text Styling */
+
+.bio {
+    text-align: center;
+    line-height: 1.2;
 }
 
 /* Scroll Bars for Scroll Boxes */
@@ -140,7 +224,7 @@ main {
 
     .job:hover {
         color: #EF8354;
-        cursor: pointer;
+        cursor: default;
     }
 
 /* Skillset List */
@@ -162,51 +246,3 @@ main {
         cursor: default;
     }
 
-/* Image Styling */
-
-#profile-frame {
-    max-width: 220px;
-    max-height: 220px;
-    background-color: #4F5D75;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-img {
-    width: 600px;
-    height: 600px;
-    margin-top: 130px;
-}
-
-/* Button Styling */
-
-#cv-button a {
-    text-decoration: none;
-}
-
-#cv-button button {
-    display: block;
-    margin: 20px auto;
-    padding: 1.5% 4.5%;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    background-color: #FFFFFF;
-    box-shadow: 0 2px 4px rgba(45, 49, 66, 0.4), 0 3px 10px rgba(45, 49, 66, 0.38);
-    color: #4F5D75;
-}
-
-#cv-button button:hover {
-    cursor: pointer;
-    
-}
-
-/* Bio Text Styling */
-
-#bio {
-    text-align: center;
-    margin-top: 20px;
-    line-height: 1.2;
-}

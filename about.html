@@ -4,18 +4,15 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width,  initial-scale=1.0" />
         <title>L.R. Williams: About Me</title>
-        <link rel="stylesheet" href="main.css" />
-        <link rel="stylesheet" href="about.css" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/about.css" />
     </head>
     <body>
-        <script src="script.js"></script>
+        <script src="script/script.js"></script>
         <header>
             <!--Nav Bar-->
             <nav >
                 <ul class="nav-bar">
-                    <li>
-                        <a href="home.html">Home</a>
-                    </li>
                     <li>
                         <a href="about.html">About</a>
                     </li>
@@ -30,20 +27,28 @@
                 <section class="about-grid" id="main-info">
                     <!--Profile Pic-->
                     <div id="profile-frame">
-                        <img src="emoji-img.png" alt="profile-pic" />
+                        <img src="files/emoji-img.png" alt="profile-pic" />
                     </div>
-                    <!-- Download CV Button-->
-                    <div id="cv-button">
-                        <a href="LatoyaRenee_Williams_CV.pdf" download>
+                    <!-- Intro Statement -->
+                     <div class="introduction">
+                        <h1>hi.</h1>
+                        <h2>I'm L.R. Williams</h2>
+                        <p>Introductory Statement Here</p>
+                    </div>
+                    <!-- CV & Projects Button-->
+                    <div class="buttons">
+                        <a id="cv-button" href="LatoyaRenee_Williams_CV.pdf" download>
                             <button>Download CV</button>
                         </a>
+                        <a id="projects-button" href="projects.html">
+                            <button>See Projects</button>
+                        </a>
+                    </div>
                     <!-- Short Bio -->
-                    <article id="bio-box">
-                        <p id="bio">
-                            <!--Insert Bio-->
+                    <div class="bio">
+                        <p>
                             Bio things and suches and so forths
                         </p>
-                    </article>
                 </section>
                 <section class="about-grid" id="work-history">
                     <h4>Work History</h4>
