@@ -1,0 +1,190 @@
+#main-container {
+    display: grid;
+    width: 70%;
+    height: 500px;
+    margin: auto;
+    gap: 0.5rem;
+    position: relative;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat (6, 1fr);
+}
+
+.project-box {
+    position: relative;
+    overflow: hidden;
+    min-height: 70px;
+    min-width: 70px;
+    transition: all 0.3s ease;
+    z-index: 1;
+    border-radius: 5px;
+    border: 2px solid #FFFFFF;
+    align-content: center;
+
+}
+
+/* --- Project Boxes --- */
+
+/*First Column: 4 items */
+.project-box:nth-child(-n+4) {
+    grid-column: 1;
+    grid-row: span 2;
+}
+
+/*Second Column: next 3 items */
+.project-box:nth-child(n+5):nth-child(-n+7) {
+    grid-column: 2;
+    grid-row: span 3;
+}
+
+/*Third Column: remaining 4 items */
+.project-box:nth-child(n+8) {
+    grid-column: 3;
+    grid-row: span 2;
+}
+
+/* Inside All Boxes */
+
+.project-box img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: scale 0.5s ease-in-out;
+}
+
+.project-box h2 {
+    position: relative;
+    padding: 0.2rem;
+    font-weight: 800;
+    width: 100%;
+    text-align: center;
+    background-color: #BFC0C088;
+    color: #2D3142;
+}
+
+.hidden-project-info { 
+    max-height: 0;
+    opacity: 0;
+    background-color: transparent;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease, background-color 0.5s ease;
+}
+
+.about-project p{
+    color: #2D3142;
+    max-width: 100%;
+    font-size: 0.75rem;
+    text-align: center;
+    padding: 2px;
+}
+
+.button-box {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    margin-bottom: 5px;
+}
+
+.project-button, .code-button {
+    border: 1px solid #2D314288;
+    border-radius: 5px;
+    background-color: #4F5D75;
+    box-shadow: 1px 1px 2px #2D314288;
+    font-size: 0.8rem;
+    padding: 2px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+
+        /* Hover Effects Inside All Boxes */
+        
+        .project-box:hover{
+            z-index: 10;
+            transform: scale(1.2);
+            box-shadow: 5px 5px 5px 5px #2D314288;
+        }
+        .project-box:hover h2 {
+            margin-top: 0;
+            color: #EF8354;
+        }
+
+        .project-box:hover .hidden-project-info { 
+            visibility: visible; 
+            max-height: 100%;
+            opacity: 1;
+            background-color: #BFC0C088
+        }
+
+        #main-container:has(.project-box:hover) .project-box:not(:hover) {
+            opacity: 0.3;
+        }
+
+        .project-button:hover, .code-button:hover {
+            background-color: #2D3142;
+            color: #EF8354;
+            box-shadow: 2px 2px 4px #2D314288;
+        }
+
+
+   
+
+/*Box 1*/
+    #box-one {
+        background-color: white;
+        
+    }
+
+/*Box 2*/
+    #box-two {
+        background-color: orange;
+    }
+
+/*Box 3*/
+    #box-three {
+        background-color: yellow;
+    }
+
+/*Box 4*/
+    #box-four {
+        background-color: green;
+    }
+
+/*Box 5*/
+    #box-five {
+        background-color: blue;
+    }
+
+/*Box 6*/
+    #box-six {
+        background-color: indigo;
+    }
+
+/*Box 7*/
+    #box-seven {
+        background-color: violet;
+    }
+
+/*Box 8*/
+    #box-eight {
+        background-color: pink;
+    }
+
+/*Box 9*/
+    #box-nine {
+        background-color: brown;
+    }
+
+/*Box 10*/
+    #box-ten {
+        background-color: gray;
+    }
+
+/*Box 11*/
+    #box-eleven {
+        background-color: black;
+    }
+
+
+
