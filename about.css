@@ -7,7 +7,6 @@ main {
 #about-main {
     display: grid;
     width: 90%;
-    margin: 90px auto;
     grid-template: repeat(3, 1fr) / 2fr 1.5fr 2fr;
     column-gap: 5px;
     justify-content: center;

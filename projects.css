@@ -1,206 +1,190 @@
 #main-container {
     display: grid;
-    position: relative;
-    grid-template: repeat(4, minmax(0, 1fr)) / repeat (6, 1fr);
-    gap: 5px;
-    padding: 5px;
-    margin: 90px auto 20px auto;
-    width: 80%;
+    width: 70%;
     height: 500px;
-    border: 2px solid #4F5D75;
-    border-radius: 15px;
-    overflow: hidden;
+    margin: auto;
+    gap: 0.5rem;
+    position: relative;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat (6, 1fr);
 }
 
 .project-box {
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    justify-content: space-around;
     position: relative;
+    overflow: hidden;
+    min-height: 70px;
+    min-width: 70px;
+    transition: all 0.3s ease;
     z-index: 1;
-    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-    text-align: center;
+    border-radius: 5px;
+    border: 2px solid #FFFFFF;
+    align-content: center;
+
 }
 
 /* --- Project Boxes --- */
 
+/*First Column: 4 items */
+.project-box:nth-child(-n+4) {
+    grid-column: 1;
+    grid-row: span 2;
+}
+
+/*Second Column: next 3 items */
+.project-box:nth-child(n+5):nth-child(-n+7) {
+    grid-column: 2;
+    grid-row: span 3;
+}
+
+/*Third Column: remaining 4 items */
+.project-box:nth-child(n+8) {
+    grid-column: 3;
+    grid-row: span 2;
+}
+
 /* Inside All Boxes */
 
-.project-hover-box {
-    background-color: #2D314280;
+.project-box img {
+    position: absolute;
     width: 100%;
-    z-index: 2;
-    height: auto;
-    justify-content: center;
-    padding: 10px 20px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    height: 100%;
+    object-fit: cover;
+    transition: scale 0.5s ease-in-out;
 }
 
 .project-box h2 {
-    width: 100%;
     position: relative;
-    padding: 10px 0;
-    margin: 20px auto;
-    color: #FFFFFF;
-    z-index: 2;
-    transition: opacity 0.4s ease-in-out, height 0.4s ease-in-out;
-    font-size: 0.9rem;
-}
-
-.hidden-project-info {
-    visibility: hidden;
-    opacity: 0;
-    transform: scaleY(0);
-    transition: transform 0.4s ease-in-out, opacity 0.4s;
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    overflow: hidden;
-    padding: 20px 5px;
-    position: absolute;
-    z-index: 2;
+    padding: 0.2rem;
+    font-weight: 800;
     width: 100%;
-    font-size: 8px;
+    text-align: center;
+    background-color: #BFC0C088;
+    color: #2D3142;
 }
 
-.project-about {
-    padding: 5px 10px;
-    color: #FFFFFF;
-    font-size: 0.5rem;
+.hidden-project-info { 
+    max-height: 0;
+    opacity: 0;
+    background-color: transparent;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease, background-color 0.5s ease;
+}
+
+.about-project p{
+    color: #2D3142;
+    max-width: 100%;
+    font-size: 0.75rem;
+    text-align: center;
+    padding: 2px;
 }
 
 .button-box {
-    width: 100%;
-    padding: 5px 0;
     display: flex;
-    justify-content: space-evenly;
-    gap: 10px;
-    z-index: 1;
-    font-size: 0.85rem;
+    justify-content: center;
+    gap: 2px;
+    margin-bottom: 5px;
 }
 
-.see-project-button, .see-code-button {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 15px;
-    background-color: #4F5D7590;
-    color: #FFFFFFCC;
-    cursor: pointer;
+.project-button, .code-button {
+    border: 1px solid #2D314288;
+    border-radius: 5px;
+    background-color: #4F5D75;
+    box-shadow: 1px 1px 2px #2D314288;
+    font-size: 0.8rem;
+    padding: 2px;
+    color: #FFFFFF;
     text-decoration: none;
-    text-align: center;
 }
+
 
         /* Hover Effects Inside All Boxes */
-
-        .project-box:hover .hidden-project-info {
-            visibility: visible;
-            position: relative;
-            opacity: 1;
-            transform: scaleY(1);
-            
+        
+        .project-box:hover{
+            z-index: 10;
+            transform: scale(1.2);
+            box-shadow: 5px 5px 5px 5px #2D314288;
         }
-
         .project-box:hover h2 {
-            display: none;
-            opacity: 0;
-            height: 0;
+            margin-top: 0;
+            color: #EF8354;
+        }
+
+        .project-box:hover .hidden-project-info { 
+            visibility: visible; 
+            max-height: 100%;
+            opacity: 1;
+            background-color: #BFC0C088
+        }
+
+        #main-container:has(.project-box:hover) .project-box:not(:hover) {
+            opacity: 0.3;
+        }
+
+        .project-button:hover, .code-button:hover {
+            background-color: #2D3142;
+            color: #EF8354;
+            box-shadow: 2px 2px 4px #2D314288;
         }
 
 
+   
 
 /*Box 1*/
     #box-one {
-        grid-area: 1 / 1 / span 2 / span 2;
         background-color: white;
         
     }
 
 /*Box 2*/
     #box-two {
-        grid-area: 1 / 3 / span 1 / span 1;
         background-color: orange;
     }
 
 /*Box 3*/
     #box-three {
-        grid-area: 1 / 4 / span 1 / span 1;
         background-color: yellow;
     }
 
 /*Box 4*/
     #box-four {
-        grid-area: 1 / 5 / span 1 / span 2;
         background-color: green;
     }
 
 /*Box 5*/
     #box-five {
-        grid-area: 2 / 3 / span 1 / span 2;
         background-color: blue;
     }
 
 /*Box 6*/
     #box-six {
-        grid-area: 2 / 5 / span 1 / span 1;
         background-color: indigo;
     }
 
 /*Box 7*/
     #box-seven {
-        grid-area: 2 / 6 / span 2 / span 1;
         background-color: violet;
     }
 
 /*Box 8*/
     #box-eight {
-        grid-area: 3 / 1 / span 1 / span 2;
         background-color: pink;
     }
 
 /*Box 9*/
     #box-nine {
-        grid-area: 3 / 3 / span 2 / span 2;
         background-color: brown;
     }
 
 /*Box 10*/
     #box-ten {
-        grid-area: 4 / 1 / span 1 / span 2;
         background-color: gray;
     }
 
 /*Box 11*/
     #box-eleven {
-        grid-area: 3 / 5 / span 2 / span 1;
         background-color: black;
     }
-
-/*Box 12*/
-    #box-twelve {
-        grid-area: 4 / 6 / span 1 / span 1;
-        background-color: white;
-    }
-
-
-/* --- Hover Effect for Project Boxes --- */
-
-
-.project-box:hover {
-    transform: scale(1.5) translate(10%);
-    z-index: 5;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.19);
-}
-
-#main-container:has(.project-box:hover) .project-box:not(:hover) {
-    opacity: 0.3;
-    transform: scale(0.95);
-}
 
 
 

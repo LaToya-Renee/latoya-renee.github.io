@@ -21,7 +21,7 @@ header{
 }
 
 .nav-bar{
-    width: 40%;
+    width: 50%;
     min-height: 70px;
     margin: auto;
     display: inline-flex;
@@ -52,13 +52,20 @@ header{
     background-color: #EF8354;
 }
 
+main {
+    padding: 100px 0 0 0;
+}
+
 
 /* --- HOME PAGE --- */
 
 #home-main{
     background-color: #4F5D75;
-    margin: 10% 5%;
-    padding: 5%;
+    border-radius: 40px 0 40px 0;
+    width: 50%;
+    height: auto;
+    margin: 90px auto;
+    padding: 10px 0 10px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
     z-index: 1;
 }
@@ -76,13 +83,14 @@ h1{
     float: left;
     font-size: 5.5rem;
     text-align: right;
-    
+    margin-right: 20px;
 }
 
 #intro{
     width: 50%;
     float: right;
     padding: 5% 2%;
+    font-size: 5rem;
 }
 
 #intro h2{
@@ -111,14 +119,6 @@ h1{
     color: #4F5D75;
 }
 
-/* .home-button img {
-    float: left;
-    width: 20%;
-    height: 80%;
-    margin: 5% 5%;
-}
-*/
-
 .home-button h3 {
     width: 100%;
     text-align: center;
@@ -128,4 +128,10 @@ h1{
 
 .home-button:link {
     text-decoration: none;
+}
+
+.home-button:hover {
+    background-color: #EF8354;
+    color: #4F5D75;
+    box-shadow: 0 4px 8px rgba(45, 49, 66, 0.4), 0 6px 20px rgba(45, 49, 66, 0.38);
 }
